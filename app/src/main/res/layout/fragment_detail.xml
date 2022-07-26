@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_home"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:gravity="center"
+            tools:text="Book Title"
+            android:textAllCaps="false"
+            android:layout_margin="16dp"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/author"
+        tools:text="Author: Author's Name"
+        android:padding="8dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contributor"
+        tools:text="Contributor: Contributor's Name"
+        android:padding="8dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        tools:text="A profile of a performer who was a well-known burlesque dancer in New York City."
+        android:padding="8dp"
+        android:textStyle="italic"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/publisher"
+        tools:text="Publisher: Publisher's Name"
+        android:padding="8dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/best_seller_date"
+        tools:text="Best Seller Date: 2022-07-16"
+        android:padding="8dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rank"
+        tools:text="Rank: 1"
+        android:padding="8dp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rank_last_week"
+        tools:text="Rank Last Week: 0"
+        android:padding="8dp"
+        android:gravity="center"/>
+
+</LinearLayout>
