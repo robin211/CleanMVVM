@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.dharmaputera.cleanmvvm.R
 import com.dharmaputera.cleanmvvm.adapter.BookAdapter
@@ -15,7 +16,6 @@ import com.dharmaputera.cleanmvvm.viewmodel.BookNonFictionViewModel
 class NonFictionFragment : Fragment() {
     lateinit var binding: FragmentFictionBinding
     private lateinit var adapter: BookAdapter
-    private lateinit var bookNonFictionViewModel: BookNonFictionViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,8 +25,7 @@ class NonFictionFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bookNonFictionViewModel = ViewModelProvider(requireActivity())[BookNonFictionViewModel::class.java]
-        bookNonFictionViewModel.state.observe(requireActivity()){
+        (activity as MainActivity?)!!.getbookFictionViewModel().state.observe(requireActivity()){
             if(!it.isLoading){
                 binding.progressCircularFiction.visibility = View.INVISIBLE
                 if (it.error.isNotBlank()){

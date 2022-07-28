@@ -5,16 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.dharmaputera.cleanmvvm.adapter.BookAdapter
 import com.dharmaputera.cleanmvvm.databinding.FragmentFictionBinding
 import com.dharmaputera.cleanmvvm.viewmodel.BookFictionViewModel
+import com.dharmaputera.cleanmvvm.viewmodel.BookNonFictionViewModel
 
 
 class FictionFragment : Fragment() {
     lateinit var binding: FragmentFictionBinding
     private lateinit var adapter: BookAdapter
-    private lateinit var bookFictionViewModel: BookFictionViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,8 +26,7 @@ class FictionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bookFictionViewModel = ViewModelProvider(requireActivity())[BookFictionViewModel::class.java]
-        bookFictionViewModel.state.observe(requireActivity()){
+        (activity as MainActivity?)!!.getbookFictionViewModel().state.observe(requireActivity()){
             if(!it.isLoading){
                 binding.progressCircularFiction.visibility = View.INVISIBLE
                 if (it.error.isNotBlank()){
